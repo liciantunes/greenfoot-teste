@@ -9,6 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class intro extends World
 {
+    public int temp = 10;
+    public int temp1 = 10;
+    public int temp2 = 10;
     private int sTimer = 0;
 
     /**
@@ -23,10 +26,16 @@ public class intro extends World
     }
 
     public void act(){
-        if (Greenfoot.isKeyDown("space")){
-            setBackground(new GreenfootImage("pag2.png"));
+        temp--;
+        if (Greenfoot.isKeyDown("space") && (temp < 1)){
+            setBackground(new GreenfootImage("2.png"));
+            temp1--;
         }
-        if (Greenfoot.isKeyDown("enter")){
+        if (Greenfoot.isKeyDown("enter") && (temp1 < 1)){
+            setBackground(new GreenfootImage("3.png"));
+            temp2--;
+        }
+        if (Greenfoot.isKeyDown("enter") && (temp2< 1)){
             Mundo world = new Mundo();
             Greenfoot.setWorld(world);
         }

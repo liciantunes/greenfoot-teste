@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Poder2 extends Actor
 {
+    public int temp = 30;
     /**
      * Act - do whatever the Poder wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -26,10 +27,15 @@ public class Poder2 extends Actor
             
             Counter2 counter2 = (Counter2) getWorld().getObjects(Counter2.class).get(0);
             counter2.add(1);
-            
+            temp = 0;
             getWorld().removeObject(c);
             getWorld().removeObject(this);
+            
         }
+        if(temp < 1){
+        rapunzel_venceu world = new rapunzel_venceu();
+        Greenfoot.setWorld(world);
+            }
     }
     
     public void moveAtaque()
